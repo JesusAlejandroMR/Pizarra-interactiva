@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+<title>
+    Menú inicial
+</title>
+<meta charset="utf-8">
+</head>
+<body>
+    <h1>Tipos de pizarras disponibles</h1>
+
+    <table class="default">
+        <th>
+            <td>Botonera</td>
+        </th>
+        <tr>
+            <td>
+                <button id="pizarraT" onclick="elegirPlataforma(datoPagina = {opcion : 1,detalle : 'TeclaPizarra'})">Pizarra con teclado</button>
+            </td>
+            <td>
+                <script>
+                    
+                    //console.log(datoPagina);
+                </script>
+                <button id="pizarraM" onclick="elegirPlataforma(datoPagina = {opcion : 2,detalle : 'TeclaMouse'})">Pizarra con mouse</button>
+            </td>
+        </tr>
+    </table>
+    <script src="mapaIndex.js"></script>
+</body>
+</html>
+
+
+
