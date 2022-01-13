@@ -6,4 +6,5 @@ function elegirPlataforma(dato){
     }else if(dato.opcion == 2){
         window.location.href = 'pizarra_Mouse.html'+dato.detalle;
     }
+    alert ("git funciona a pesar de q lo cierro");
 }
