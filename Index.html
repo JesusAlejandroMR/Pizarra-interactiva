@@ -1,33 +1,42 @@
 <!DOCTYPE html>
+
 <head>
-<title>
-    Menú inicial
-</title>
-<meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Board</title>
+    <link rel="icon" href="./src/blackboard.png" />
+    <link rel="stylesheet" type="text/css" href="./style/style.css">
+    <!--Link a google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <h1>Tipos de pizarras disponibles</h1>
+    <h1 id="Titulo">Tipos de pizarras disponibles</h1>
+    <div class="principal-box">
+        <button id="btnMBoard">Pizarra con teclado</button>
+        <button id="btnKBoard">Pizarra con mouse</button>
+    </div>
 
-    <table class="default">
-        <th>
-            <td>Botonera</td>
-        </th>
-        <tr>
-            <td>
-                <button id="pizarraT" onclick="elegirPlataforma(datoPagina = {opcion : 1,detalle : 'TeclaPizarra'})">Pizarra con teclado</button>
-            </td>
-            <td>
-                <script>
-                    
-                    //console.log(datoPagina);
-                </script>
-                <button id="pizarraM" onclick="elegirPlataforma(datoPagina = {opcion : 2,detalle : 'TeclaMouse'})">Pizarra con mouse</button>
-            </td>
-        </tr>
-    </table>
-    <script src="mapaIndex.js"></script>
+
+    <input type="color" id="colorPicker">
+    <input type="range" id="lineWidth" min="1" max="10" step="1" value="5">
+    <select id="lineCap">
+        <option value="round">Round</option>
+        <option value="butt">Butt</option>
+        <option value="square">Square</option>
+    </select>
+
+    <div class="canvasDiv" id="canvasClick">
+        <canvas id="canvasClk" width="500" height="500"></canvas>
+        <canvas id="canvasBrd" width="500" height="500"></canvas>
+    </div>
+    <!--
+        <a href="https://www.flaticon.com/free-icons/board" title="board icons">Board icons created by Creartive - Flaticon</a> 
+    -->
+    <script src="./src/ControlPizarras.js"></script>
 </body>
+
 </html>
-
-
-
