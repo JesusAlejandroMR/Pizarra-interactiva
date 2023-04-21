@@ -1,15 +1,4 @@
 
-:root{
-    --white: #ffffff;
-    --black:#000000;
-    --very-light-pink: #c7c7c7;
-    --text-input-field: #f7f7f7;
-    --dark: #232830;
-    --orange-radiactive: #e44d07;
-    --sm:14px;
-    --md:16px;
-    --lg:18px;
-}
 
 body{
     background-color: #FFA844;
@@ -18,16 +7,29 @@ body{
     background-size: cover;
     font-family: 'DynaPuff', cursive;
 }
+:root{
+    --white: #ffffff;
+    --black:#000000;
+    --very-light-pink: #c7c7c9;    
+    --very-light-orange: #fcf4ae5b;
+    --text-input-field: #f7f7f7;
+    --dark: #232830;
+    --orange-radiactive: #e44d07;
+    --sm:14px;
+    --md:16px;
+    --lg:18px;
+}
 
 .principal-box{
     display: flex;    
-    justify-content: center;    
+    justify-content: center;
+    flex-wrap: wrap; /* agregar esta propiedad para ajustar elementos en varias líneas */
 }
 
 .principal-box button{
     margin: 10px;
     background-color: var(--orange-radiactive);
-    font-size: medium;
+    font-size: var(--md);
     font-family: 'DynaPuff', cursive;
     color: white;
     padding: 20px;
@@ -36,14 +38,80 @@ body{
 }
 
 .canvasDiv{
-    background-color: var(--very-light-pink);
-    display: flex;    
-    border: 1px --dark solid;
-    border-radius: 8px;    
+    position: relative; /* cambiar a relative para que los elementos floten en la parte superior del cuerpo */
+    width: 100%;
+    padding-bottom: 50%; /* agregar un relleno inferior para mantener la proporción de la altura del elemento */
+    
 }
 
 .canvasDiv canvas{
-    margin: 12px;
     border: 1px solid black;
     border-radius: 10px;
+    background-color: var(--white);
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#LblTitulo {
+    background-color: var(--text-input-field);
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'DynaPuff';
+    font-size: var(--md);
+    color: var(--orange-radiactive);
+    margin: 12px; 
+}
+
+#Titulo {
+    background-color: var(--very-light-orange);
+    border-radius: 8px;
+    text-align: center;
+    font-family: 'DynaPuff';
+    font-size: 60px;
+    color: var(--dark);
+    margin: 12px; 
+}
+
+#custom{
+    display: none;
+}
+
+/* Media Queries */
+
+/* Para pantallas más pequeñas, reducir el tamaño de fuente y el espacio de margen */
+
+@media screen and (max-width: 768px) {
+  .principal-box button {
+    font-size: var(--sm);
+    margin: 5px;
+  }
+  
+  #LblTitulo {
+    font-size: var(--sm);
+    margin: 8px;
+  }
+}
+
+/* Para pantallas más grandes, aumentar el tamaño de fuente y el espacio de margen */
+
+@media screen and (min-width: 1024px) {
+  .principal-box button {
+    font-size: var(--lg);
+    margin: 15px;
+  }
+  
+  #LblTitulo {
+    font-size: var(--lg);
+    margin: 20px;
+  }
+}
+
+/* Para pantallas muy grandes, ajustar el ancho máximo de la caja principal */
+
+@media screen and (min-width: 1440px) {
+  .principal-box {
+    max-width: 1200px;
+    margin: 0 auto; /* centrar el contenido en pantallas grandes */
+  }
 }
